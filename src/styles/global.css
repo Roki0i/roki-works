@@ -1,1 +1,177 @@
 @import "tailwindcss";
+
+:root {
+	color-scheme: dark;
+	font-family:
+		Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		sans-serif;
+	background: #0a0a0a;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	background:
+		radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), transparent 28rem),
+		linear-gradient(180deg, #0a0a0a 0%, #111111 44%, #080808 100%);
+}
+
+::selection {
+	background: rgba(255, 255, 255, 0.22);
+	color: #ffffff;
+}
+
+.site-shell {
+	min-height: 100vh;
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+	background-size: 72px 72px;
+}
+
+.page-section {
+	margin-inline: auto;
+	max-width: 72rem;
+	padding: 5rem 1.25rem;
+}
+
+.section-header {
+	max-width: 48rem;
+}
+
+.section-header h1 {
+	margin-top: 0.75rem;
+	font-size: clamp(2.5rem, 7vw, 5.6rem);
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	line-height: 0.96;
+	color: #ffffff;
+}
+
+.section-lead {
+	margin-top: 1.5rem;
+	max-width: 42rem;
+	color: #a3a3a3;
+	font-size: 1.05rem;
+	line-height: 1.9;
+}
+
+.eyebrow {
+	color: #a3a3a3;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+}
+
+.nav-link {
+	border-radius: 999px;
+	color: #d4d4d4;
+	font-size: 0.78rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	padding: 0.55rem 0.85rem;
+	text-transform: uppercase;
+	transition:
+		background-color 160ms ease,
+		color 160ms ease;
+}
+
+.nav-link:hover {
+	background: rgba(255, 255, 255, 0.08);
+	color: #ffffff;
+}
+
+.footer-link {
+	color: #a3a3a3;
+	transition: color 160ms ease;
+}
+
+.footer-link:hover {
+	color: #ffffff;
+}
+
+.work-card,
+.post-card {
+	display: block;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
+		rgba(10, 10, 10, 0.72);
+	padding: 1.5rem;
+	transition:
+		transform 180ms ease,
+		border-color 180ms ease,
+		background-color 180ms ease;
+}
+
+.work-card:hover,
+.post-card:hover {
+	border-color: rgba(255, 255, 255, 0.28);
+	transform: translateY(-3px);
+}
+
+.status-pill,
+.tag {
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.04);
+	color: #d4d4d4;
+	font-size: 0.72rem;
+	font-weight: 600;
+	padding: 0.35rem 0.65rem;
+	white-space: nowrap;
+}
+
+.prose {
+	color: #d4d4d4;
+	font-size: 1rem;
+	line-height: 1.9;
+}
+
+.prose h2 {
+	color: #ffffff;
+	font-size: 1.55rem;
+	font-weight: 700;
+	line-height: 1.3;
+	margin: 2.5rem 0 0.75rem;
+}
+
+.prose h3 {
+	color: #ffffff;
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin: 2rem 0 0.5rem;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+	margin: 1rem 0;
+}
+
+.prose ul {
+	list-style: disc;
+	padding-left: 1.25rem;
+}
+
+.prose a {
+	color: #ffffff;
+	text-decoration: underline;
+	text-underline-offset: 0.25em;
+}
+
+@media (max-width: 720px) {
+	.page-section {
+		padding-block: 3.5rem;
+	}
+
+	.section-header h1 {
+		font-size: 3rem;
+	}
+}

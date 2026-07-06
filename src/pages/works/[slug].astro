@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+	const works = await getCollection('works');
+	return works.map((work) => ({
+		params: { slug: work.id },
+		props: { work },
+	}));
+}
+
+const { work } = Astro.props;
+const { Content } = await render(work);
+---
+
+<Layout title={work.data.title} description={work.data.summary}>
+	<article class="page-section">
+		<a class="text-sm text-neutral-400 hover:text-white" href="/works/">← Works</a>
+		<div class="mt-10 grid gap-10 lg:grid-cols-[1fr_18rem]">
+			<header>
+				<p class="eyebrow">{work.data.category} / {work.data.year}</p>
+				<h1 class="mt-4 text-5xl font-bold leading-tight tracking-[-0.04em] text-white md:text-6xl">{work.data.title}</h1>
+				<p class="mt-6 max-w-3xl text-lg leading-8 text-neutral-400">{work.data.summary}</p>
+			</header>
+			<aside class="h-fit rounded-lg border border-white/10 bg-white/[0.035] p-5">
+				<p class="eyebrow">Project Info</p>
+				<dl class="mt-5 space-y-4 text-sm">
+					<div>
+						<dt class="text-neutral-500">Status</dt>
+						<dd class="mt-1 text-white">{work.data.status}</dd>
+					</div>
+					<div>
+						<dt class="text-neutral-500">Stack</dt>
+						<dd class="mt-2 flex flex-wrap gap-2">{work.data.stack.map((item) => <span class="tag">{item}</span>)}</dd>
+					</div>
+				</dl>
+			</aside>
+		</div>
+		<div class="prose mt-12 max-w-3xl">
+			<Content />
+		</div>
+	</article>
+</Layout>

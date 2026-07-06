@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+---
+
+<Layout title="About" description="Roki Worksについて。">
+	<section class="page-section">
+		<SectionHeader
+			eyebrow="About"
+			title="Roki Worksについて"
+			description="Webアプリ、VR、データ可視化、ガジェット検証を中心に、作ったものと考えたことを蓄積するポートフォリオです。"
+		/>
+		<div class="mt-12 grid gap-8 lg:grid-cols-[1fr_1fr]">
+			<div class="prose">
+				<h2>Profile</h2>
+				<p>
+					Roki Worksは、制作物を見せるためのポートフォリオと、制作過程を残すブログをひとつにまとめたサイトです。
+					設計意図、使った技術、改善点が伝わるように整理しています。
+				</p>
+				<h2>Interest</h2>
+				<ul>
+					<li>Astro / React / Tailwind CSSを使った静的サイト制作</li>
+					<li>VRや3D表現を使った体験設計</li>
+					<li>データ分析と可視化</li>
+					<li>ガジェット、作業環境、開発ログ</li>
+				</ul>
+			</div>
+			<div class="rounded-lg border border-white/10 bg-white/[0.035] p-6">
+				<p class="eyebrow">Site Stack</p>
+				<div class="mt-6 grid gap-3">
+					{['Astro', 'React', 'Tailwind CSS', 'Markdown / MDX', 'Static hosting'].map((item) => (
+						<div class="flex items-center justify-between border-b border-white/10 pb-3 text-sm last:border-0">
+							<span class="text-white">{item}</span>
+							<span class="text-neutral-500">Included</span>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

@@ -1,23 +1,82 @@
+---
+import '../styles/global.css';
+
+type Props = {
+	title?: string;
+	description?: string;
+};
+
+const {
+	title = 'Roki Works',
+	description = 'Roki Works is a portfolio and blog for web experiments, product prototypes, and build notes.',
+} = Astro.props;
+
+const navItems = [
+	{ href: '/', label: 'Home' },
+	{ href: '/works/', label: 'Works' },
+	{ href: '/blog/', label: 'Blog' },
+	{ href: '/about/', label: 'About' },
+	{ href: '/contact/', label: 'Contact' },
+];
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title === 'Roki Works' ? title : `${title} | Roki Works`}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
+		<div class="site-shell">
+			<header class="sticky top-0 z-50 border-b border-white/10 bg-neutral-950/85 backdrop-blur">
+				<nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4" aria-label="Primary navigation">
+					<a href="/" class="group flex items-center gap-3 font-semibold tracking-[0.22em] text-sm uppercase">
+						<span class="h-2.5 w-2.5 rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.9)]"></span>
+						<span>Roki Works</span>
+					</a>
+					<div class="hidden items-center gap-1 md:flex">
+						{
+							navItems.map((item) => (
+								<a class="nav-link" href={item.href}>
+									{item.label}
+								</a>
+							))
+						}
+					</div>
+					<a class="rounded-full border border-white/15 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-neutral-200 transition hover:border-white/35 hover:bg-white/10" href="/contact/">
+						Contact
+					</a>
+				</nav>
+				<div class="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-5 pb-4 md:hidden">
+					{
+						navItems.map((item) => (
+							<a class="nav-link shrink-0" href={item.href}>
+								{item.label}
+							</a>
+						))
+					}
+				</div>
+			</header>
+
+			<main>
+				<slot />
+			</main>
+
+			<footer class="border-t border-white/10">
+				<div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 text-sm text-neutral-500 md:flex-row md:items-center md:justify-between">
+					<p>© 2026 Roki Works. Portfolio and build log.</p>
+					<div class="flex gap-5">
+						<a class="footer-link" href="/privacy-policy/">Privacy Policy</a>
+						<a class="footer-link" href="/works/">Works</a>
+						<a class="footer-link" href="/blog/">Blog</a>
+					</div>
+				</div>
+			</footer>
+		</div>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

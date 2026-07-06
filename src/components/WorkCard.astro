@@ -1,0 +1,30 @@
+---
+type Props = {
+	href: string;
+	title: string;
+	summary: string;
+	category: string;
+	year: number;
+	stack: string[];
+	status: string;
+};
+
+const { href, title, summary, category, year, stack, status } = Astro.props;
+---
+
+<a class="work-card group" href={href}>
+	<div class="flex items-start justify-between gap-4">
+		<div>
+			<p class="eyebrow">{category} / {year}</p>
+			<h2 class="mt-3 text-2xl font-semibold tracking-tight text-white">{title}</h2>
+		</div>
+		<span class="status-pill">{status}</span>
+	</div>
+	<p class="mt-5 text-sm leading-7 text-neutral-400">{summary}</p>
+	<div class="mt-7 flex flex-wrap gap-2">
+		{stack.map((item) => <span class="tag">{item}</span>)}
+	</div>
+	<span class="mt-8 inline-flex text-sm font-medium text-neutral-200 transition group-hover:translate-x-1">
+		View project
+	</span>
+</a>

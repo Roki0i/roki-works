@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import WorkCard from '../../components/WorkCard.astro';
+import { getCollection } from 'astro:content';
+
+const works = (await getCollection('works')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="Works" description="Roki Worksの制作物一覧です。">
+	<section class="page-section">
+		<SectionHeader
+			eyebrow="Works"
+			title="制作物"
+			description="VR、データ可視化、分析ツールなど、目的・技術・学びが伝わる形で制作物を整理しています。"
+		/>
+		<div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+			{works.map((work) => (
+				<WorkCard
+					href={`/works/${work.id}/`}
+					title={work.data.title}
+					summary={work.data.summary}
+					category={work.data.category}
+					year={work.data.year}
+					stack={work.data.stack}
+					status={work.data.status}
+				/>
+			))}
+		</div>
+	</section>
+</Layout>
