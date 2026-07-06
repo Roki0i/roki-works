@@ -24,7 +24,7 @@ const { href, title, summary, category, year, stack, status } = Astro.props;
 	<div class="mt-7 flex flex-wrap gap-2">
 		{stack.map((item) => <span class="tag">{item}</span>)}
 	</div>
-	<span class="mt-8 inline-flex text-sm font-medium text-neutral-200 transition group-hover:translate-x-1">
-		View project
+	<span class="mt-8 inline-flex rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-neutral-200 transition group-hover:border-sky-300/35 group-hover:text-white">
+		View details
 	</span>
 </a>

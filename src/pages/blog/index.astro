@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import SectionHeader from '../../components/SectionHeader.astro';
-import PostCard from '../../components/PostCard.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import PostList from '../../components/PostList.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
@@ -11,22 +11,13 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 
 <Layout title="Blog" description="Roki Worksの制作ログとガジェット記事です。">
 	<section class="page-section">
-		<SectionHeader
+		<SectionHeading
 			eyebrow="Blog"
 			title="制作ログとガジェット記事"
-			description="作ったものの設計メモ、試した技術、使っている道具の記録をMarkdown/MDXで更新していきます。"
+			description="作ったものの設計メモ、試した技術、使っている道具の記録を、読み物として追いやすい一覧にしています。"
 		/>
-		<div class="mt-12 grid gap-4 md:grid-cols-2">
-			{posts.map((post) => (
-				<PostCard
-					href={`/blog/${post.id}/`}
-					title={post.data.title}
-					description={post.data.description}
-					pubDate={post.data.pubDate}
-					category={post.data.category}
-					tags={post.data.tags}
-				/>
-			))}
+		<div class="mt-12 max-w-4xl">
+			<PostList posts={posts} />
 		</div>
 	</section>
 </Layout>

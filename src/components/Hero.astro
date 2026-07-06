@@ -1,0 +1,37 @@
+---
+import StatusBadge from './StatusBadge';
+---
+
+<section class="page-section pb-12 pt-16 md:pt-24">
+	<div class="grid gap-12 lg:grid-cols-[1fr_21rem] lg:items-end">
+		<div>
+			<StatusBadge label="Independent build log" />
+			<p class="mt-8 text-sm font-semibold text-sky-200/80">Student Developer / Web / VR / Data Visualization</p>
+			<h1 class="mt-4 max-w-4xl text-5xl font-bold leading-[1.02] tracking-[-0.04em] text-white md:text-7xl">
+				Roki Works
+			</h1>
+			<p class="mt-7 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+				Webアプリ、VRワールド、データ可視化、UIデザインを制作している大学生の制作ログです。
+			</p>
+			<div class="mt-9 flex flex-wrap gap-3">
+				<a class="primary-button" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+				<a class="secondary-button" href="/blog/">Blog</a>
+				<a class="secondary-button" href="/works/">Works</a>
+			</div>
+		</div>
+		<div class="rounded-lg border border-white/10 bg-slate-950/70 p-5 shadow-2xl shadow-black/20">
+			<p class="eyebrow">Now Building</p>
+			<div class="mt-5 space-y-4">
+				<div class="rounded-md border border-white/10 bg-white/[0.035] p-4">
+					<p class="text-sm font-semibold text-white">Build notes first</p>
+					<p class="mt-2 text-sm leading-6 text-slate-400">作品を並べるだけでなく、考えたこと、試したこと、制作中のメモが読める場所にしています。</p>
+				</div>
+				<div class="grid grid-cols-3 gap-2 text-center text-xs text-slate-400">
+					<span class="rounded-md bg-white/[0.04] px-2 py-3">Web</span>
+					<span class="rounded-md bg-white/[0.04] px-2 py-3">VR</span>
+					<span class="rounded-md bg-white/[0.04] px-2 py-3">Data</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

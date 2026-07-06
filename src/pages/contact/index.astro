@@ -1,25 +1,30 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import SectionHeader from '../../components/SectionHeader.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
 ---
 
 <Layout title="Contact" description="Roki Worksへの連絡先です。">
 	<section class="page-section">
-		<SectionHeader
+		<SectionHeading
 			eyebrow="Contact"
 			title="連絡先"
-			description="制作物、ポートフォリオ、ブログ記事に関する連絡先をまとめています。"
+			description="GitHub、X、Emailへのリンクです。URLは公開前に実際のアカウントへ差し替えられるように仮置きしています。"
 		/>
-		<div class="mt-12 grid gap-4 md:grid-cols-2">
-			<a class="post-card" href="mailto:hello@example.com">
+		<div class="mt-12 grid gap-4 md:grid-cols-3">
+			<a class="contact-card" href="https://github.com/" target="_blank" rel="noreferrer">
+				<p class="eyebrow">GitHub</p>
+				<h2 class="mt-3 text-xl font-semibold text-white">github.com/yourname</h2>
+				<p class="mt-4 text-sm leading-7 text-neutral-400">リポジトリ、制作履歴、実験中のコードへの導線です。</p>
+			</a>
+			<a class="contact-card" href="https://x.com/" target="_blank" rel="noreferrer">
+				<p class="eyebrow">X</p>
+				<h2 class="mt-3 text-xl font-semibold text-white">@yourname</h2>
+				<p class="mt-4 text-sm leading-7 text-neutral-400">制作ログや更新メモを投稿する想定のリンクです。</p>
+			</a>
+			<a class="contact-card" href="mailto:hello@example.com">
 				<p class="eyebrow">Email</p>
 				<h2 class="mt-3 text-xl font-semibold text-white">hello@example.com</h2>
 				<p class="mt-4 text-sm leading-7 text-neutral-400">公開前に実際の連絡先へ差し替えてください。</p>
-			</a>
-			<a class="post-card" href="https://github.com/" target="_blank" rel="noreferrer">
-				<p class="eyebrow">GitHub</p>
-				<h2 class="mt-3 text-xl font-semibold text-white">GitHub profile</h2>
-				<p class="mt-4 text-sm leading-7 text-neutral-400">リポジトリや制作履歴への導線として使えます。</p>
 			</a>
 		</div>
 	</section>

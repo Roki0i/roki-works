@@ -3,7 +3,7 @@ title: "Google Trends Analysis"
 summary: "Google Trendsのキーワード推移を比較し、記事企画やプロダクト調査に活かす分析メモ。"
 category: "Analysis Tool"
 year: 2026
-status: "Research"
+status: "Completed"
 stack:
   - Trends
   - Research

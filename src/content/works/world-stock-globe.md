@@ -3,7 +3,7 @@ title: "World Stock Globe"
 summary: "世界の株式市場を地球儀のようなUIで眺めるデータ可視化アイデア。国や市場ごとの状態を直感的に比較します。"
 category: "Data Visualization"
 year: 2026
-status: "Concept"
+status: "In Progress"
 stack:
   - React
   - Data Viz

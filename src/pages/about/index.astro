@@ -1,37 +1,37 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import SectionHeader from '../../components/SectionHeader.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
 ---
 
 <Layout title="About" description="Roki Worksについて。">
 	<section class="page-section">
-		<SectionHeader
+		<SectionHeading
 			eyebrow="About"
-			title="Roki Worksについて"
-			description="Webアプリ、VR、データ可視化、ガジェット検証を中心に、作ったものと考えたことを蓄積するポートフォリオです。"
+			title="開発者プロフィール"
+			description="データサイエンス系の大学生として、Web、VR、データ可視化、UIを横断しながら、自分でサービスを作れるエンジニアを目指しています。"
 		/>
 		<div class="mt-12 grid gap-8 lg:grid-cols-[1fr_1fr]">
 			<div class="prose">
 				<h2>Profile</h2>
 				<p>
-					Roki Worksは、制作物を見せるためのポートフォリオと、制作過程を残すブログをひとつにまとめたサイトです。
-					設計意図、使った技術、改善点が伝わるように整理しています。
+					Roki Worksは、Webアプリ、VRワールド、データ可視化、UIデザインに興味があるデータサイエンス系大学生の制作ログです。
+					作品の完成形だけでなく、調べたこと、試したこと、改善したい点も残しています。
 				</p>
-				<h2>Interest</h2>
+				<h2>現在の制作テーマ</h2>
 				<ul>
-					<li>Astro / React / Tailwind CSSを使った静的サイト制作</li>
-					<li>VRや3D表現を使った体験設計</li>
-					<li>データ分析と可視化</li>
-					<li>ガジェット、作業環境、開発ログ</li>
+					<li>Steamゲームデータを使った分析と可視化</li>
+					<li>Astro / Reactによる個人サイトとブログ運用</li>
+					<li>VRワールド制作と空間UIの検証</li>
+					<li>小さなWebサービスを自分で企画し、実装し、公開する流れの習得</li>
 				</ul>
 			</div>
 			<div class="rounded-lg border border-white/10 bg-white/[0.035] p-6">
-				<p class="eyebrow">Site Stack</p>
+				<p class="eyebrow">Tech Stack</p>
 				<div class="mt-6 grid gap-3">
-					{['Astro', 'React', 'Tailwind CSS', 'Markdown / MDX', 'Static hosting'].map((item) => (
+					{['React', 'TypeScript', 'Astro', 'Python', 'Unity', 'Tailwind CSS', 'Markdown / MDX'].map((item) => (
 						<div class="flex items-center justify-between border-b border-white/10 pb-3 text-sm last:border-0">
 							<span class="text-white">{item}</span>
-							<span class="text-neutral-500">Included</span>
+							<span class="text-neutral-500">Using</span>
 						</div>
 					))}
 				</div>
